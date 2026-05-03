@@ -1,0 +1,20 @@
+\newcommand{\project}[3]{
+    \noindent
+    \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} l r}
+        \textbf{#1} & \href{#2}{GitHub} \\
+    \end{tabular*}
+    \vspace{-0.6em}
+    \begin{itemize}[leftmargin=0.15in, itemsep=2pt]
+        \item #3
+    \end{itemize}
+}
+
+\project
+    {OpenDev}
+    {https://github.com/opendev-to/opendev}
+    {Contributed to an open-source, terminal-native coding agent for parallel agent execution and multi-model development workflows.}
+
+\project
+    {CADAgent}
+    {https://github.com/toreleon/CADAgent}
+    {Built an AI-powered CAD copilot on top of FreeCAD, adding an in-app agent interface for 3D parametric modeling workflows.}

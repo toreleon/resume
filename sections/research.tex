@@ -1,0 +1,29 @@
+\documentclass[letter,10pt]{article}
+\usepackage{TLCresume}
+\usepackage{enumitem}
+\usepackage{graphicx}
+\begin{document}
+
+\newcommand{\experience}[6]{
+    \noindent
+    \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} l r}
+        \textbf{#1} at 
+        \raisebox{-0.2\height}{\includegraphics[height=1.2em]{#5}}~\textit{#2} & \textit{#3 --- #4} \\
+    \end{tabular*}
+    \begin{itemize}[leftmargin=0.15in, itemsep=2pt]
+        #6
+    \end{itemize}
+}
+
+\experience
+    {Research Assistant}
+    {DS@UIT Laboratory, University of Information Technology}
+    {Feb 2020}
+    {Feb 2022}
+    {figs/Logo_UIT_updated.jpg} % replace this with your actual logo path or remove if no logo
+    {
+        \item \textbf{COVIDROP Dataset:} Created the first Vietnamese numerical reasoning dataset based on DROP, enhancing Vietnamese NLP research resources.
+        \item \textbf{Annotation Tools:} Developed guidelines and tools for accurate data labeling.
+        \item \textbf{Model Evaluation:} Implemented and evaluated NAQANet and NumNet models to assess dataset usability.
+    }
+\end{document}
