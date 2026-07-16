@@ -1,61 +1,93 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{TLCresume}[11/19/21 resume package]
-% Author: Timmy Chan
+\ProvidesPackage{TLCresume}[2026/07/16 Editorial Navy resume package]
+% Design: "Editorial Navy" — XCharter body + Source Sans Pro display, one navy accent.
+% All formatting lives here; content lives in sections/.
 
-% Assuming using "article" document class and letter sized paper.
-% FONT STUFF
+% ---------- ATS: map every glyph to Unicode in the PDF text layer ----------
+\input{glyphtounicode}
+\pdfgentounicode=1
+\ifdefined\pdfinterwordspaceon\pdfinterwordspaceon\fi % real space chars in the text layer
 
-\RequirePackage[T1]{fontenc} %  Font encoding https://texfaq.org/FAQ-why-inp-font
-\RequirePackage[default,semibold]{sourcesanspro}
-\RequirePackage[10pt]{moresize}
-\usepackage{anyfontsize}
-\RequirePackage{csquotes}
+% ---------- Encoding + fonts ----------
+\RequirePackage{cmap}                      % text-layer insurance; must load before fontenc
+\RequirePackage[T1]{fontenc}
+\RequirePackage[utf8]{inputenc}
+\RequirePackage[scaled=.98]{XCharter}      % body serif: Charter — dense, large x-height
+\RequirePackage[semibold]{sourcesanspro}   % display sans on \sffamily only (NOT default,
+                                           % or it silently replaces XCharter as body face)
+\RequirePackage[protrusion=true,expansion=false]{microtype} % rag polish + \textls tracking
 
-% MARGINS AND SPACING
-\@ifpackageloaded{geometry}{}{\RequirePackage[margin=.5in, top=.5in]{geometry}} % Set Margins
-\raggedright % left align no indent
-\raggedbottom % top align no indent
-
-% COLOR
-\RequirePackage{xcolor}
-\definecolor{highlight}{RGB}{61, 90, 128} % CHANGE THIS TO YOUR FAV COLOR https://g.co/kgs/aoqdi7
-
-% LINKS
-\RequirePackage{hyperref}
-\hypersetup{colorlinks=true,urlcolor=highlight}
-
-% BULLET POINTS
-\RequirePackage[inline]{enumitem}
-\setlength{\tabcolsep}{0in}
-
-% SECTION FORMATTING 
-\RequirePackage[nostruts]{titlesec}
-\titlespacing*{\section}{0em}{0.5em}{0em}
-\titleformat{\section}{\color{highlight} \scshape \raggedright \large}{}{0em}{}[\vspace{-0.75em}\hrulefill]
-% SUBSECTION FORMATTING
-\titlespacing*{\subsection}{0em}{0em}{0em}
-\titleformat{\subsection}{\bfseries}{}{0em}{}[]
-
-% BOLD COMMAND
-\newcommand{\skills}[1]{ {\bfseries #1}}
-
-
-
-% SUBTEXT
-\newcommand{\subtext}[1]{\textit{#1}\par\vspace{-.75em}}
-
-% tighter spacing than itemize
-\setlist[itemize]{align=parleft,left=0pt..1em}
-\newenvironment{zitemize}{
-\begin{itemize} \itemsep 0pt \parskip 0pt \parsep 1pt}
-{\end{itemize}\vspace{-.5em}}
-
-% NO PAGE NUMBER
+% ---------- Geometry (header lives in the body; no fancyhdr) ----------
+\RequirePackage[a4paper,left=15mm,right=15mm,top=15mm,bottom=14mm]{geometry}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\setlength{\tabcolsep}{0pt}
+\linespread{1.05}                          % 10pt body on ~12.6pt leading
+\raggedright
+\frenchspacing
+\raggedbottom
+\pagestyle{empty}
 \pagenumbering{gobble}
+% One-page tuning ladder, in order — never drop body size below 10pt:
+%   1. \linespread 1.05 -> 1.04
+%   2. section space above 11pt -> 10pt (\titlespacing below)
+%   3. entry gap 6pt -> 5pt (\experience below)
 
-% SUBFILES IMPORTING
-% \RequirePackage{standalone}
+% ---------- Color: one navy accent, used surgically ----------
+\RequirePackage{xcolor}
+\definecolor{accent}{HTML}{2B3A67}         % deep navy: role line, headings, separators
+\colorlet{rulecolor}{accent!40}            % section rules (light slate tint)
+\definecolor{metagray}{gray}{0.35}         % dates, GPA lines, bullet markers
 
-% FOR TEMPLATE FILLER
-\RequirePackage[english]{babel}
-\RequirePackage{blindtext}% Filler Text
+% ---------- Links: real hrefs, no web-blue boxes ----------
+\RequirePackage[hidelinks]{hyperref}
+\hypersetup{pageanchor=false}
+
+% ---------- Lists: enumitem, zero negative-vspace hacks ----------
+\RequirePackage{enumitem}
+\setlist[itemize]{leftmargin=1.15em,labelsep=0.55em,itemsep=2.5pt,topsep=3pt,
+  parsep=0pt,partopsep=0pt,label={\color{metagray}\scriptsize\textbullet}}
+
+% ---------- Section headings: tracked SSP-semibold caps + thin rule ----------
+\RequirePackage[nostruts]{titlesec}
+\newcommand{\sectionstyle}[1]{\textls[100]{\MakeUppercase{#1}}}
+\newif\ifTLC@fresh % true right after a section heading; first entry then skips its lead
+\titleformat{\section}
+  {\sffamily\bfseries\fontsize{11}{13}\selectfont\color{accent}\raggedright}
+  {}{0pt}{\sectionstyle}
+  [{\vspace{2.5pt}\color{rulecolor}\titlerule[0.6pt]\global\TLC@freshtrue}]
+\titlespacing*{\section}{0pt}{11pt}{5pt}
+
+% ---------- Header (normal body content, ATS-correct position) ----------
+% Separator glued with penalties so the contact line can never break mid-item
+\newcommand{\sep}{\penalty10000\hspace{.35em}{\color{accent}\scriptsize\raisebox{.25ex}{\textbullet}}\penalty10000\hspace{.35em}}
+\newcommand{\resumeheader}[7]{% {name}{role}{email}{phone}{linkedin-id}{github-id}{city}
+  {\sffamily\bfseries\fontsize{20}{24}\selectfont\textls[60]{\MakeUppercase{#1}}\par}
+  \vspace{3pt}%
+  {\sffamily\fontsize{10}{12}\selectfont\color{accent}\textls[100]{\MakeUppercase{#2}}\par}
+  \vspace{5pt}%
+  {\fontsize{9}{11}\selectfont
+   \mbox{\href{mailto:#3}{#3}}\sep \mbox{#4}\sep
+   \mbox{\href{https://www.linkedin.com/in/#5}{linkedin.com/in/#5}}\sep
+   \mbox{\href{https://github.com/#6}{github.com/#6}}\sep \mbox{#7}\par}%
+  \vspace{4pt}}
+
+% ---------- Entry commands ----------
+\newcommand{\datefont}{\fontsize{9.5}{11.5}\selectfont\itshape\color{metagray}}
+% Plain paragraphs (not tabular*) so every section gets identical glue below its rule
+\newcommand{\TLC@entrylead}[1]{\par\ifTLC@fresh\global\TLC@freshfalse\else\addvspace{#1}\fi}
+\newcommand{\experience}[5]{% {Title}{Company}{Start}{End}{\item ...}
+  \TLC@entrylead{6pt}%
+  \noindent{\bfseries #1}, {\itshape #2}\hfill\mbox{\datefont #3 -- #4}\par\nopagebreak
+  \begin{itemize}#5\end{itemize}}
+
+\newcommand{\education}[4]{% {Degree}{School}{Dates}{GPA line}
+  \TLC@entrylead{5pt}%
+  \noindent{\bfseries #1}, {\itshape #2}\hfill\mbox{\datefont #3}\par\nopagebreak
+  {\datefont #4\par}}
+
+% ---------- Legacy shims (only referenced by unused section files) ----------
+\colorlet{highlight}{accent}
+\newcommand{\skills}[1]{{\bfseries #1}}
+\newcommand{\subtext}[1]{\textit{#1}\par}
+\newenvironment{zitemize}{\begin{itemize}}{\end{itemize}}

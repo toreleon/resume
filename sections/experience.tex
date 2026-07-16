@@ -1,22 +1,18 @@
-\newcommand{\experience}[5]{
-    \noindent
-    \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} l r}
-        \textbf{#1} at \textit{#2} & \textit{#3 --- #4} \\
-    \end{tabular*}
-    \begin{itemize}[leftmargin=0.15in, itemsep=2pt]
-        #5
-    \end{itemize}
-}
+% \experience{Title}{Company}{Start}{End}{\item ...} is defined in TLCresume.sty
+% Bullet style: verb-first XYZ/CAR, metrics front-loaded, 1-2 lines, no trailing
+% periods, no bold lead-ins (r/EngineeringResumes convention). Never invent metrics.
 
 \experience
     {AI Engineer}
-    {FPT AI Center - AI4SE Laboratory}
+    {FPT AI Center -- AI4SE Laboratory}
     {Jan 2024}
     {Present}
     {
-        \item \textbf{Mainframe Studio:} Backend engineer building a platform for mainframe code analysis, modernization workflows, and developer-facing legacy system intelligence.
-        \item \textbf{Code Review Agent:} Led engineering for an agentic system that automates code review, code analysis, and bug localization across enterprise software projects.
-        \item \textbf{Metis:} Led engineering for wiki generation over large-scale codebases across multiple programming languages, improving codebase understanding and technical documentation.
+        \item Led development of a LangGraph-based multi-agent system that automates code review, code analysis, and bug localization across 50+ multi-language enterprise repositories
+        \item Built Metis, a codebase-intelligence engine that auto-generates technical wikis via RAG and vector search over large multi-language repositories, adopted by internal FPT engineering teams
+        \item Implemented LLM-as-a-judge pipelines and benchmarked agents on HumanEval, MBPP, and CodeReviewBench
+        \item Developed MCP servers and tool-calling integrations exposing code-analysis tools to the agents
+        \item Designed and shipped production backend services (Python) powering a mainframe code-analysis and modernization platform that surfaces legacy-system intelligence to developers
     }
 
 \experience
@@ -25,11 +21,10 @@
     {Apr 2022}
     {Oct 2023}
     {
-        \item \textbf{WriterZen AI Copilot:} Researched and built a prototype AI copilot for end-to-end SEO workflow automation, content planning, and competitive analysis.
-        \item \textbf{In-App AI Features:} Led R\&D for prompt-based product features, increasing platform user engagement by 83.7\%.
-        \item \textbf{SERP Clustering Engine:} Designed high-performance clustering algorithms, improving processing speed by 40\% and reducing memory usage by over 5x.
+        \item Lifted platform user engagement 83.7\% by leading R\&D on prompt-based LLM product features
+        \item Accelerated SERP clustering 40\% and cut memory usage over 5x by redesigning the core clustering algorithms
+        \item Prototyped WriterZen's AI copilot automating end-to-end SEO workflows, content planning, and competitive analysis
     }
-
 
 \experience
     {Data Scientist}
@@ -37,9 +32,9 @@
     {Jul 2021}
     {Apr 2022}
     {
-        \item \textbf{Be Food Search:} Built ranking algorithms that improved search relevance and increased top recommendation click rates from 55\% to 70\%.
-        \item \textbf{Drop off Recommendation:} Designed a personalized recommendation model, increasing recommendation clicks by 8\%.
-        \item \textbf{Customer Support AI:} Developed a Rasa-based conversational platform and FastText semantic search engine for automated customer support workflows.
+        \item Raised top-recommendation click-through from 55\% to 70\% by building ranking algorithms for Be Food search
+        \item Increased recommendation clicks 8\% by designing a personalized drop-off recommendation model
+        \item Automated customer support with a Rasa conversational platform and a FastText semantic-search engine
     }
 
 \experience
@@ -48,7 +43,6 @@
     {Feb 2020}
     {Feb 2022}
     {
-        \item \textbf{COVIDROP Dataset:} Created the first Vietnamese numerical reasoning dataset based on DROP for reading comprehension over COVID-19 news.
-        \item \textbf{Annotation System:} Designed annotation guidelines and labeling tools to support high-quality Vietnamese NLP data collection.
-        \item \textbf{Model Benchmarking:} Implemented and evaluated NAQANet and NumNet baselines for Vietnamese numerical reasoning research.
+        \item Built COVIDROP, the first Vietnamese numerical-reasoning reading-comprehension dataset (DROP-based), with annotation guidelines and labeling tools ensuring high-quality data~collection
+        \item Implemented and evaluated NAQANet and NumNet baselines to benchmark Vietnamese numerical reasoning
     }

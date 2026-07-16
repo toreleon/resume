@@ -1,6 +1,6 @@
 # Thang Le Viet Resume
 
-LaTeX source for my resume as an AI Native Engineer.
+LaTeX source for my resume as an AI Engineer (LLM Agents & AI for Software Engineering).
 
 ## Resume
 

@@ -1,40 +1,8 @@
-\documentclass[letter,10pt]{article}
-\usepackage[utf8]{inputenc}
-\usepackage{geometry}
-\usepackage{fontawesome5}
-\usepackage{setspace}
-\renewcommand{\baselinestretch}{1.2} 
-\geometry{
-  a4paper,
-  left=15mm,
-  right=15mm,
-  headheight=250px,
-  top=3cm,
-  bottom=2.5cm,
-  footskip=2cm,
-  headsep = 5pt,
-}
-\usepackage{etoolbox}
-
-\newlength\newtop
-\setlength{\newtop}{1.5cm}
-
-\makeatletter
-\patchcmd\@outputpage{\global \@colht \textheight}{%
-\global\textheight=\dimexpr\textheight+\newtop\relax%
-\global\topmargin=\dimexpr\topmargin-\newtop\relax%
-\global\@colht\textheight%
-\global\newtop\z@}{}{\err}
-\makeatother
+\documentclass[10pt]{article}
 
 %====================
 % File:         resume.tex
-% Editor:       https://github.com/TimmyChan 
-
-%               https://www.linkedin.com/in/timmy-l-chan/
-% Last Updated: Jan 7th, 2022
-% Notes:        All formatting is done in TLCresume.sty
-%               No need to touch that file. 
+% Design:       "Editorial Navy" — all formatting is in TLCresume.sty.
 %               All actual content is in the sections/ folder.
 %====================
 
@@ -43,54 +11,39 @@
 %====================
 % CONTACT INFORMATION
 %====================
-\thispagestyle{empty}
-\def\name{Thang Le Viet} % Name Here
+\def\name{Thang Le Viet}
 \def\phone{(+84) 989394637}
 \def\city{Ho Chi Minh City, Viet Nam}
 \def\email{levietthang0512@outlook.com}
 \def\LinkedIn{thanglv} % linkedin.com/in/______
 \def\github{toreleon} % github username
-\def\role{AI Native Engineer} % JOB TITLE
+\def\role{AI Engineer} % JOB TITLE
 
-\RequirePackage{fancyhdr}
-\fancypagestyle{fancy}{%
-    \fancyhf{}
-    \fancyhead[C]{%
-        {\fontsize{24pt}{28pt}\selectfont\textbf{\name}}\\[0.2ex]
-        {\color{highlight}\Large\textbf{\role}}\\[1.2ex]
-        \small
-        \faEnvelope\;\href{mailto:\email}{\email} \quad|\quad%
-        \faPhone\;\phone \quad|\quad%
-        \faLinkedin\;\href{https://www.linkedin.com/in/\LinkedIn}{\LinkedIn} \quad|\quad%
-        \faGithub\;\href{https://github.com/\github}{\github} \quad|\quad%
-        \faMapMarker*\;\city
-    }
-    \renewcommand{\headrulewidth}{0pt} % <-- removes line under header
-}
-\thispagestyle{fancy}
+\hypersetup{pdftitle={\name\ -- AI ENGINEER},pdfauthor={\name}}
 
-\begin{document} 
+\begin{document}
 
-\section{ABOUT ME}
+\resumeheader{\name}{\role}{\email}{\phone}{\LinkedIn}{\github}{\city}
+
+\section{Summary}
 \input{sections/objective}
 
-\section{WORKING EXPERIENCE}
+\section{Experience}
 \input{sections/experience}
 
-\section{PROJECTS}
-\input{sections/projects}
+% \section{Projects}
+% \input{sections/projects}
 
-\section{EDUCATION}
-\input{sections/education}
-
-\section{SKILLS}
+\section{Skills}
 \input{sections/skills}
 
-% Uncomment and include if applicable:
-% \section{PUBLICATIONS}
-% \input{sections/publication}
+\section{Education}
+\input{sections/education}
 
-%\section{AWARDS}
+\section{Publications}
+\input{sections/publication}
+
+%\section{Awards}
 %\input{sections/activities}
 
 \end{document}
