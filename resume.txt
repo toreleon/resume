@@ -1,0 +1,44 @@
+Thang Le Viet — AI Engineer
+(+84) 989394637 | Ho Chi Minh City, Viet Nam | levietthang0512@outlook.com
+GitHub: toreleon | LinkedIn: thanglv
+
+SUMMARY
+AI Engineer with 5 years shipping production ML and LLM systems, specializing in agentic AI for software engineering. Currently building enterprise coding agents for code review, bug localization, and codebase intelligence at FPT AI Center.
+
+EXPERIENCE
+
+AI Engineer — FPT AI Center – AI4SE Lab (Jan 2024 – Present)
+- Led development of a LangGraph-based multi-agent system that automates code review, code analysis, and bug localization across 50+ multi-language enterprise repositories
+- Built Metis, a codebase-intelligence engine that auto-generates technical wikis via RAG and vector search over large multi-language repositories, adopted by internal FPT engineering teams
+- Implemented LLM-as-a-judge pipelines and benchmarked agents on HumanEval, MBPP, and CodeReviewBench
+- Developed MCP servers and tool-calling integrations exposing code-analysis tools to the agents
+- Designed and shipped production backend services (Python) powering a mainframe code-analysis and modernization platform that surfaces legacy-system intelligence to developers
+
+AI Engineer — Resonance Technology (Apr 2022 – Oct 2023)
+- Lifted platform user engagement 83.7% by leading R&D on prompt-based LLM product features
+- Accelerated SERP clustering 40% and cut memory usage over 5x by redesigning the core clustering algorithms
+- Prototyped WriterZen's AI copilot automating end-to-end SEO workflows, content planning, and competitive analysis
+
+Data Scientist — Be Group (Jul 2021 – Apr 2022)
+- Raised top-recommendation click-through from 55% to 70% by building ranking algorithms for Be Food search
+- Increased recommendation clicks 8% by designing a personalized drop-off recommendation model
+- Automated customer support with a Rasa conversational platform and a FastText semantic-search engine
+
+Research Assistant — NLP@UIT Lab, University of Information Technology (Feb 2020 – Feb 2022)
+- Built COVIDROP, the first Vietnamese numerical-reasoning reading-comprehension dataset (DROP-based), with annotation guidelines and labeling tools ensuring high-quality data collection
+- Implemented and evaluated NAQANet and NumNet baselines to benchmark Vietnamese numerical reasoning
+
+SKILLS
+- Programming & Tools: Python, TypeScript, SQL, Git, Claude Code, Cursor, Codex
+- LLM & Agentic Systems: LLM agents, multi-agent orchestration (LangGraph), RAG, prompt engineering, fine-tuning (LoRA), LLM evaluation, tool calling, MCP (Model Context Protocol), OpenAI & Anthropic APIs
+- AI for Software Engineering: Agentic code review, bug localization, codebase intelligence, mainframe modernization
+- ML & Data: PyTorch, Hugging Face Transformers, TensorFlow, ranking & recommendation, semantic search, vector databases
+- MLOps & Infra: Docker, Kubernetes, FastAPI / REST APIs, cloud (AWS/GCP/Azure)
+- Languages: Vietnamese (Native), English (C1)
+
+EDUCATION
+Master of Science (M.Sc.) in Computer Science — University of Information Technology (Sep 2023 – Mar 2026) — GPA: 3.7/4.0
+Bachelor of Science (B.Sc.) in Data Science — University of Information Technology (Sep 2018 – Jan 2022) — GPA: 3.6/4.0 (Top 1 in Major)
+
+PUBLICATIONS
+Van Nguyen, K., Le, T.V. & Do, T.PP. "Numerical reasoning reading comprehension on Vietnamese COVID-19 news: task, corpus, and challenges." Neural Computing & Applications 36, 14053-14073 (2024). https://doi.org/10.1007/s00521-024-09744-5
