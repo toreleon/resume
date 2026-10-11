@@ -66,14 +66,13 @@ Research Assistant                                           Feb 2020 - Feb 2022
 OPEN-SOURCE CONTRIBUTIONS
 --------------------------------------------------------------------------------
 
-  - OpenDev (Open-source Contributor): Second-largest human contributor by
-    commit count (11 Oct 2026; excluding AI/bot accounts). Contributed
-    agent-team orchestration, tool/safety architecture, streaming, project
-    rules, memory/checkpoints, and Telegram/provider integrations
+  - OpenDev (Maintainer): Contributed agent-team orchestration, tool/safety
+    architecture, streaming, project rules, memory/checkpoints, and
+    Telegram/provider integrations
     https://github.com/opendev-to/opendev
 
-  - MCPHub (Founder): Added MCP server tests and CI/CD for automated versioning
-    and PyPI publishing
+  - MCPHub: Added MCP server tests and CI/CD for automated versioning and PyPI
+    publishing
     https://github.com/Cognitive-Stack/mcphub
 
   - Mainframe Sandbox: Developed a Rust sandbox to compile/run supported COBOL
