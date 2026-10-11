@@ -142,9 +142,9 @@ out.pop()  # trailing blank before next section rule
 # -- Open-source Contributions -----------------------------------------------
 out += section("Open-source Contributions")
 CONTRIBUTIONS = [
-    ("OpenDev", "https://github.com/opendev-to/opendev",
-     "Contributed streaming read-only tool execution and scoped project instructions with include rules and tests"),
-    ("MCPHub", "https://github.com/Cognitive-Stack/mcphub",
+    ("OpenDev (Open-source Contributor)", "https://github.com/opendev-to/opendev",
+     "Contributed agent-team orchestration, tool/safety architecture, streaming execution, project rules, memory/checkpoints, and Telegram/provider integrations"),
+    ("MCPHub (Founder)", "https://github.com/Cognitive-Stack/mcphub",
      "Added MCP server tests and CI/CD for automated versioning and PyPI publishing"),
     ("Mainframe Sandbox", "https://github.com/toreleon/mainframe-env",
      "Developed a Rust-based workspace for compiling and running supported COBOL applications through CLI, browser, and MCP coding-agent interfaces"),
@@ -170,7 +170,7 @@ out.pop()
 out += section("Education")
 out += [
     lr("Master of Science (M.Sc.) in Computer Science", "Sep 2023 - Mar 2026"),
-    "  University of Information Technology  |  GPA: 3.7/4.0",
+    "  University of Information Technology  |  GPA: 3.6/4.0",
     "",
     lr("Bachelor of Science (B.Sc.) in Data Science", "Sep 2018 - Jan 2022"),
     "  University of Information Technology  |  GPA: 3.6/4.0 (Top 1 in Major)",

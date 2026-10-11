@@ -66,12 +66,13 @@ Research Assistant                                           Feb 2020 - Feb 2022
 OPEN-SOURCE CONTRIBUTIONS
 --------------------------------------------------------------------------------
 
-  - OpenDev: Contributed streaming read-only tool execution and scoped project
-    instructions with include rules and tests
+  - OpenDev (Open-source Contributor): Contributed agent-team orchestration,
+    tool/safety architecture, streaming execution, project rules,
+    memory/checkpoints, and Telegram/provider integrations
     https://github.com/opendev-to/opendev
 
-  - MCPHub: Added MCP server tests and CI/CD for automated versioning and PyPI
-    publishing
+  - MCPHub (Founder): Added MCP server tests and CI/CD for automated versioning
+    and PyPI publishing
     https://github.com/Cognitive-Stack/mcphub
 
   - Mainframe Sandbox: Developed a Rust-based workspace for compiling and
@@ -105,7 +106,7 @@ EDUCATION
 --------------------------------------------------------------------------------
 
 Master of Science (M.Sc.) in Computer Science                Sep 2023 - Mar 2026
-  University of Information Technology  |  GPA: 3.7/4.0
+  University of Information Technology  |  GPA: 3.6/4.0
 
 Bachelor of Science (B.Sc.) in Data Science                  Sep 2018 - Jan 2022
   University of Information Technology  |  GPA: 3.6/4.0 (Top 1 in Major)
