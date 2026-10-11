@@ -143,11 +143,11 @@ out.pop()  # trailing blank before next section rule
 out += section("Open-source Contributions")
 CONTRIBUTIONS = [
     ("OpenDev (Open-source Contributor)", "https://github.com/opendev-to/opendev",
-     "Contributed agent-team orchestration, tool/safety architecture, streaming execution, project rules, memory/checkpoints, and Telegram/provider integrations"),
+     "Second-largest human contributor by commit count (11 Oct 2026; excluding AI/bot accounts). Contributed agent-team orchestration, tool/safety architecture, streaming, project rules, memory/checkpoints, and Telegram/provider integrations"),
     ("MCPHub (Founder)", "https://github.com/Cognitive-Stack/mcphub",
      "Added MCP server tests and CI/CD for automated versioning and PyPI publishing"),
     ("Mainframe Sandbox", "https://github.com/toreleon/mainframe-env",
-     "Developed a Rust-based workspace for compiling and running supported COBOL applications through CLI, browser, and MCP coding-agent interfaces"),
+     "Developed a Rust sandbox to compile/run supported COBOL via CLI, browser, and MCP"),
 ]
 for name, url, description in CONTRIBUTIONS:
     out += bullets([name + ": " + description]) + ["    " + url, ""]
