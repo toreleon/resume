@@ -11,14 +11,13 @@ SUMMARY
 --------------------------------------------------------------------------------
 
   AI Engineer with 5 years shipping production ML and LLM systems, specializing
-  in agentic AI for software engineering. Currently building enterprise coding
-  agents for code review, bug localization, and codebase intelligence at FPT AI
-  Center.
+  in agentic AI for software engineering. Built enterprise coding agents for
+  code review, bug localization, and codebase intelligence at FPT AI Center.
 
 EXPERIENCE
 --------------------------------------------------------------------------------
 
-AI Engineer                                                   Jan 2024 - Present
+AI Engineer                                                  Jan 2024 - Jul 2026
   FPT AI Center - AI4SE Lab
 
   - Led development of a LangGraph-based multi-agent system that automates code
@@ -64,27 +63,40 @@ Research Assistant                                           Feb 2020 - Feb 2022
   - Implemented and evaluated NAQANet and NumNet baselines to benchmark
     Vietnamese numerical reasoning
 
+OPEN-SOURCE CONTRIBUTIONS
+--------------------------------------------------------------------------------
+
+  - OpenDev: Contributed streaming read-only tool execution and scoped project
+    instructions with include rules and tests
+    https://github.com/opendev-to/opendev
+
+  - MCPHub: Added MCP server tests and CI/CD for automated versioning and PyPI
+    publishing
+    https://github.com/Cognitive-Stack/mcphub
+
+  - Mainframe Sandbox: Developed a Rust-based workspace for compiling and
+    running supported COBOL applications through CLI, browser, and MCP
+    coding-agent interfaces
+    https://github.com/toreleon/mainframe-env
+
 SKILLS
 --------------------------------------------------------------------------------
 
-  Programming & Tools
-      Python, TypeScript, SQL, Git, Claude Code, Cursor, Codex
+  Programming
+      Python, TypeScript, SQL, Git
 
-  LLM & Agentic Systems
-      LLM agents, multi-agent orchestration (LangGraph), RAG, prompt
-      engineering, fine-tuning (LoRA), LLM evaluation, tool calling, MCP (Model
-      Context Protocol), OpenAI & Anthropic APIs
+  LLM & Agents
+      LangGraph, RAG, prompting, LoRA, LLM evaluation, tool calling, MCP,
+      OpenAI/Anthropic APIs
 
   AI for Software Engineering
       Agentic code review, bug localization, codebase intelligence, mainframe
       modernization
 
-  ML & Data
+  ML & MLOps
       PyTorch, Hugging Face Transformers, TensorFlow, ranking & recommendation,
-      semantic search, vector databases
-
-  MLOps & Infra
-      Docker, Kubernetes, FastAPI / REST APIs, cloud (AWS/GCP/Azure)
+      semantic search, vector databases, Docker, Kubernetes, FastAPI,
+      AWS/GCP/Azure
 
   Languages
       Vietnamese (Native), English (C1)

@@ -22,7 +22,7 @@
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{0pt}
 \setlength{\tabcolsep}{0pt}
-\linespread{1.05}                          % 10pt body on ~12.6pt leading
+\linespread{1.04}                          % 10pt body, compact leading
 \raggedright
 \frenchspacing
 \raggedbottom
@@ -45,7 +45,7 @@
 
 % ---------- Lists: enumitem, zero negative-vspace hacks ----------
 \RequirePackage{enumitem}
-\setlist[itemize]{leftmargin=1.15em,labelsep=0.55em,itemsep=2.5pt,topsep=3pt,
+\setlist[itemize]{leftmargin=1.15em,labelsep=0.55em,itemsep=1.5pt,topsep=3pt,
   parsep=0pt,partopsep=0pt,label={\color{metagray}\scriptsize\textbullet}}
 
 % ---------- Section headings: tracked SSP-semibold caps + thin rule ----------
@@ -56,7 +56,7 @@
   {\sffamily\bfseries\fontsize{11}{13}\selectfont\color{accent}\raggedright}
   {}{0pt}{\sectionstyle}
   [{\vspace{2.5pt}\color{rulecolor}\titlerule[0.6pt]\global\TLC@freshtrue}]
-\titlespacing*{\section}{0pt}{11pt}{5pt}
+\titlespacing*{\section}{0pt}{9pt}{5pt}
 
 % ---------- Header (normal body content, ATS-correct position) ----------
 % Separator glued with penalties so the contact line can never break mid-item
@@ -77,7 +77,7 @@
 % Plain paragraphs (not tabular*) so every section gets identical glue below its rule
 \newcommand{\TLC@entrylead}[1]{\par\ifTLC@fresh\global\TLC@freshfalse\else\addvspace{#1}\fi}
 \newcommand{\experience}[5]{% {Title}{Company}{Start}{End}{\item ...}
-  \TLC@entrylead{6pt}%
+  \TLC@entrylead{5pt}%
   \noindent{\bfseries #1}, {\itshape #2}\hfill\mbox{\datefont #3 -- #4}\par\nopagebreak
   \begin{itemize}#5\end{itemize}}
 

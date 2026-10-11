@@ -71,7 +71,7 @@ out += section("Summary")
 out += [
     wrap(
         "AI Engineer with 5 years shipping production ML and LLM systems, "
-        "specializing in agentic AI for software engineering. Currently building "
+        "specializing in agentic AI for software engineering. Built "
         "enterprise coding agents for code review, bug localization, and codebase "
         "intelligence at FPT AI Center."
     )
@@ -82,7 +82,7 @@ out += section("Experience")
 out += job(
     "AI Engineer",
     "FPT AI Center - AI4SE Lab",
-    "Jan 2024 - Present",
+    "Jan 2024 - Jul 2026",
     [
         "Led development of a LangGraph-based multi-agent system that automates "
         "code review, code analysis, and bug localization across 50+ "
@@ -139,26 +139,26 @@ out += job(
 )
 out.pop()  # trailing blank before next section rule
 
+# -- Open-source Contributions -----------------------------------------------
+out += section("Open-source Contributions")
+CONTRIBUTIONS = [
+    ("OpenDev", "https://github.com/opendev-to/opendev",
+     "Contributed streaming read-only tool execution and scoped project instructions with include rules and tests"),
+    ("MCPHub", "https://github.com/Cognitive-Stack/mcphub",
+     "Added MCP server tests and CI/CD for automated versioning and PyPI publishing"),
+    ("Mainframe Sandbox", "https://github.com/toreleon/mainframe-env",
+     "Developed a Rust-based workspace for compiling and running supported COBOL applications through CLI, browser, and MCP coding-agent interfaces"),
+]
+for name, url, description in CONTRIBUTIONS:
+    out += bullets([name + ": " + description]) + ["    " + url, ""]
+out.pop()
+
 # -- Skills ------------------------------------------------------------------
 SKILLS = [
-    ("Programming & Tools", "Python, TypeScript, SQL, Git, Claude Code, Cursor, Codex"),
-    (
-        "LLM & Agentic Systems",
-        "LLM agents, multi-agent orchestration (LangGraph), RAG, prompt "
-        "engineering, fine-tuning (LoRA), LLM evaluation, tool calling, MCP "
-        "(Model Context Protocol), OpenAI & Anthropic APIs",
-    ),
-    (
-        "AI for Software Engineering",
-        "Agentic code review, bug localization, codebase intelligence, mainframe "
-        "modernization",
-    ),
-    (
-        "ML & Data",
-        "PyTorch, Hugging Face Transformers, TensorFlow, ranking & recommendation, "
-        "semantic search, vector databases",
-    ),
-    ("MLOps & Infra", "Docker, Kubernetes, FastAPI / REST APIs, cloud (AWS/GCP/Azure)"),
+    ("Programming", "Python, TypeScript, SQL, Git"),
+    ("LLM & Agents", "LangGraph, RAG, prompting, LoRA, LLM evaluation, tool calling, MCP, OpenAI/Anthropic APIs"),
+    ("AI for Software Engineering", "Agentic code review, bug localization, codebase intelligence, mainframe modernization"),
+    ("ML & MLOps", "PyTorch, Hugging Face Transformers, TensorFlow, ranking & recommendation, semantic search, vector databases, Docker, Kubernetes, FastAPI, AWS/GCP/Azure"),
     ("Languages", "Vietnamese (Native), English (C1)"),
 ]
 out += section("Skills")
